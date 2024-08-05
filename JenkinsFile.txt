@@ -2,22 +2,22 @@ pipeline {
     agent any
 
     stages {
-        stange("") {
+        stange("Checkout code") {
             //checkout the repository
             steps {
                 git branch: "main", url: "https://github.com/stanchevaQA/JenkinsSeleniumIdeDemo_04_08"
             }
         }
-        stange("") {
+        stange("Set up .Net Core") {
             //install dot net
         }
-        stange("") {
+        stange("Restore depenedencies") {
             //install dependencies
         }
-        stange("") {
+        stange("Build") {
             //build
         }
-        stange("") {
+        stange("Run Tests") {
             //test
         }
     }
