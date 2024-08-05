@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+
+    stages {
+        stange("") {
+            //checkout the repository
+            steps {
+                git branch: "main", url: "https://github.com/stanchevaQA/JenkinsSeleniumIdeDemo_04_08"
+            }
+        }
+        stange("") {
+            //install dot net
+        }
+        stange("") {
+            //install dependencies
+        }
+        stange("") {
+            //build
+        }
+        stange("") {
+            //test
+        }
+    }
+
+}
