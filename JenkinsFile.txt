@@ -2,14 +2,14 @@ pipeline {
     agent any
 
     stages {
-        stange("Checkout code") {
+        stage("Checkout code") {
             //checkout the repository
             steps {
                 git branch: "main", url: "https://github.com/stanchevaQA/JenkinsSeleniumIdeDemo_04_08"
             }
         }
 
-        stange("Set up .Net Core") {
+        stage("Set up .Net Core") {
             //install dot net
             bat '''
             echo Downloading .Net 6 Sdk
@@ -19,17 +19,17 @@ pipeline {
             '''
         }
 
-        stange("Restore depenedencies") {
+        stage("Restore depenedencies") {
             //install dependencies
             bat 'dotnet restore SeleniumIde.sln'
         }
 
-        stange("Build") {
+        stage("Build") {
             //build
             bat 'dotnet duils SeleniumIde.sln --configuration Realease'
         }
 
-        stange("Run Tests") {
+        stage("Run Tests") {
             //test
             bat 'dotnet test SeleniumIde.sln --logger "trx;LogFileName=TestResults.trx"'
         }
